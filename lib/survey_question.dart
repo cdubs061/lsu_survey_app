@@ -187,6 +187,7 @@ class _SurveyQuestion extends State<SurveyQuestion> {
                       thermalComfort1: thermalComfort,
                       thermalSensation1: thermalSensation,
                       thermalEnvironment1: thermalEnvironment,
+                      date1: DateTime.now(),
                       stressedLevel1: stressedLevel)
                   ),
                 );
@@ -203,7 +204,7 @@ class _SurveyQuestion extends State<SurveyQuestion> {
   }
 
   void checkQuestions() {
-    if (thermalSensation.isNotEmpty && thermalEnvironment.isNotEmpty &&
+    if (roomNumber.isNotEmpty && thermalSensation.isNotEmpty && thermalEnvironment.isNotEmpty &&
         thermalComfort.isNotEmpty && stressedLevel.isNotEmpty) {
       setState(() {
         questionAnswered = true; // Show the button when all questions are answered

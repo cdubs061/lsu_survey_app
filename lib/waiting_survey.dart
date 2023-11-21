@@ -11,6 +11,7 @@ class WaitingSurvey extends StatefulWidget {
   String thermalEnvironment1 = '';
   String thermalComfort1 = '';
   String stressedLevel1 = '';
+  DateTime date1;
 
   WaitingSurvey({
     super.key,
@@ -20,15 +21,16 @@ class WaitingSurvey extends StatefulWidget {
     required this.thermalSensation1,
     required this.thermalEnvironment1,
     required this.stressedLevel1,
+    required this.date1,
   });
   
   @override
-  State<StatefulWidget> createState() => _waitingSurvey();
+  State<StatefulWidget> createState() => _WaitingSurvey();
   }
 
 
 
-class _waitingSurvey extends State<WaitingSurvey> {
+class _WaitingSurvey extends State<WaitingSurvey> {
 
   String username ='';
   String thermalSensation1 = '';
@@ -110,6 +112,7 @@ class _waitingSurvey extends State<WaitingSurvey> {
                   thermalComfort1: widget.thermalComfort1,
                   thermalSensation1: widget.thermalSensation1,
                   thermalEnvironment1: widget.thermalEnvironment1,
+                  date1: widget.date1,
                   stressedLevel1: widget.stressedLevel1,)),
               );
             },
@@ -120,14 +123,12 @@ class _waitingSurvey extends State<WaitingSurvey> {
     );
 
   }
-  void checkTimer()
-  {
-    if(remainingMinutes == 0 && remainingSeconds == 0)
-      {
-        setState(() {
-          isTimerFinished = true;
-        });
-      }
+  void checkTimer() {
+    if(remainingMinutes == 0 && remainingSeconds == 0) {
+      setState(() {
+        isTimerFinished = true;
+      });
+    }
   }
 }
 

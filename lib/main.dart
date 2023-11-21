@@ -5,7 +5,6 @@ import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 
@@ -102,8 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     String toCsv(Map<String, dynamic> data) {
       List<String> values = data.values.map((e) => '"$e"').toList();
-      String currentDate = DateFormat('yyyy-MM-dd - kk:mm').format(DateTime.now());
-      return '$currentDate,${values.join(',')}\n';
+      return values.join(',');
     }
 
     Map<String, dynamic> map = toMap();
@@ -203,7 +201,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 padding: EdgeInsets.fromLTRB(0,20.0,0,0),
                 child: Text (
                   'Please Select Your Gender',
-                      style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
 
                 ),
               ),
