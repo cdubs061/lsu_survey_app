@@ -275,7 +275,7 @@ class _MyHomePageState extends State<MyHomePage> {
           bool error = await completeFirstSurvey();
 
           if(mounted) {
-            if(username.isNotEmpty && age >= 18 && age <= 65 && gender.isNotEmpty && levelEducation.isNotEmpty) { // && error) {
+            if(username.isNotEmpty && age >= 18 && age <= 65 && gender.isNotEmpty && levelEducation.isNotEmpty && error) {
               setState(() {
                 buttonColor = Colors.green;
               });

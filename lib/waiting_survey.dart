@@ -90,7 +90,7 @@ class _WaitingSurvey extends State<WaitingSurvey> {
             const ClockIcon(),
             const SizedBox(height: 16),
             Text(
-              'Please wait for AT LEAST $remainingMinutes:${remainingSeconds.toString().padLeft(2, '0')} to end',
+              'Please wait AT LEAST $remainingMinutes:${remainingSeconds.toString().padLeft(2, '0')} before answering the next survey',
               style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,

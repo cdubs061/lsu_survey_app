@@ -78,7 +78,7 @@ class DataAnalysis {
     request.files.add(await http.MultipartFile.fromPath('file', file.path));
 
     try {
-      var response = await request.send().timeout(const Duration(seconds: 2));
+      var response = await request.send().timeout(const Duration(seconds: 3));
       if (response.statusCode != 200) {
         return false;
       }
